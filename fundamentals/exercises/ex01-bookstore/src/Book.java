@@ -1,7 +1,5 @@
 import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.UUID;
+import java.util.Random;
 
 public class Book {
     private String isbn;
@@ -11,7 +9,7 @@ public class Book {
     private int quantityAvailable;
 
     public Book(String title, String author, LocalDate datePublished, int quantityAvailable){
-        this.isbn = UUID.randomUUID().toString();
+        this.isbn = this.generateIsbn(13);
         this.author = author;
         this.datePublished = datePublished;
         this.quantityAvailable = quantityAvailable;
@@ -39,5 +37,19 @@ public class Book {
 
     public boolean isAvailable(){
         return this.quantityAvailable > 0;
+    }
+
+    private String generateIsbn(int numberStrings){
+        // Function to be used in populate isbn attribute.
+        String characters = "1234567890";
+        Random rand = new Random();
+        StringBuilder stringGenerated = new StringBuilder();
+
+        for(int i = 0; i <= numberStrings; i++){
+            // Adding to StringBuilder instance a random string of characters.
+            stringGenerated.append(characters.charAt(rand.nextInt(characters.length())));
+        }
+
+        return stringGenerated.toString();
     }
 }
