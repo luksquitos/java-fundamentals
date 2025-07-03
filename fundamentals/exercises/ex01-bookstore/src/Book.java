@@ -6,13 +6,13 @@ public class Book {
     private String title;
     private String author;
     private LocalDate datePublished;
-    private int quantityAvailable;
+    private boolean isAvailable;
 
-    public Book(String title, String author, LocalDate datePublished, int quantityAvailable){
+    public Book(String title, String author, LocalDate datePublished){
         this.isbn = this.generateIsbn(13);
         this.author = author;
         this.datePublished = datePublished;
-        this.quantityAvailable = quantityAvailable;
+        this.isAvailable = true;
     }
 
     public String getIsbn(){
@@ -35,8 +35,12 @@ public class Book {
         this.datePublished = datePublished;
     }
 
-    public boolean isAvailable(){
-        return this.quantityAvailable > 0;
+    public boolean getIsAvailable(){
+        return this.isAvailable;
+    }
+
+    public void setIsAvailable(boolean isAvailable){
+        this.isAvailable = isAvailable;
     }
 
     private String generateIsbn(int numberStrings){
