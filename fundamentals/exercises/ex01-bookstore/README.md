@@ -53,5 +53,3 @@ Você deve criar um pequeno sistema para gerenciar livros em uma biblioteca. O o
 * **Manipulação de String**: Uso de `toLowerCase()` e `equalsIgnoreCase()` para buscas *case-insensitive*.
 
 ---
-
-Este exercício é um excelente ponto de partida para consolidar os conceitos fundamentais do Java e da POO. Sinta-se à vontade para me perguntar qualquer dúvida durante a implementação!

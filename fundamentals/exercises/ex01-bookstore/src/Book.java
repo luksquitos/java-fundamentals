@@ -9,7 +9,8 @@ public class Book {
     private boolean isAvailable;
 
     public Book(String title, String author, LocalDate datePublished){
-        this.isbn = this.generateIsbn(13);
+        this.isbn = "1";
+        this.title = title;
         this.author = author;
         this.datePublished = datePublished;
         this.isAvailable = true;
@@ -21,6 +22,14 @@ public class Book {
 
     public String getAuthor(){
         return this.author;
+    }
+
+    public String getTitle(){
+        return this.title;
+    }
+
+    public void setTitle(String title){
+        this.title = title;
     }
 
     public void setAuthor(String author){
@@ -41,6 +50,11 @@ public class Book {
 
     public void setIsAvailable(boolean isAvailable){
         this.isAvailable = isAvailable;
+    }
+
+    @Override
+    public String toString(){
+        return this.getTitle() + "@" + this.getIsbn();
     }
 
     private String generateIsbn(int numberStrings){
