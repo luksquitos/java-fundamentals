@@ -1,6 +1,4 @@
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.Scanner;
 
 
 public class Main {
@@ -11,21 +9,10 @@ public class Main {
 
         Library library = new Library();
         library.addBook(hailMary);
-//        library.addBook(hailMary2);
-//        library.addBook(theBookThief);
+        library.addBook(hailMary2);
+        library.addBook(theBookThief);
         System.out.println(library.listAllBooks());
 
         library.borrowBook("1");
-//        library.borrowBook("1");
-
-
-
-
-
-
-//        for (Book b: library.listAllBooks()){
-//            System.out.println(b);
-//        }
-
     }
 }
